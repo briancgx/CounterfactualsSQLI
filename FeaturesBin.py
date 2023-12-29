@@ -93,4 +93,7 @@ funcion_conversion = lambda palabra: 1 if palabra in feature else 0
 
 df['SentenciaConvertida'] = columna_sentencias.apply(lambda sentencia: [funcion_conversion(palabra) for palabra in sentencia.split()])
 
-print(df[['Sentence', 'SentenciaConvertida']])
+df_nuevo=df[['SentenciaConvertida']]
+df_nuevo.to_csv('nuevo_dataset.csv', index=False)
+print(df_nuevo)
+
